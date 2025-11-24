@@ -1,0 +1,174 @@
+/* ------------------ CONFIGURACIÓN GENERAL ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F5F8FA;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ------------------ HEADER ------------------ */
+header {
+    background-color: #1C3F6B;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.fecha {
+    font-size: 0.9rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ------------------ SIDEBAR / NAV ------------------ */
+nav, .sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #1C3F6B;
+    width: 200px;
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 80px;
+    left: 0;
+}
+
+nav a, .sidebar a {
+    color: #E1ECF4;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+nav a:hover, .sidebar a:hover {
+    background-color: #376BA0;
+}
+
+nav a.active, .sidebar a.active {
+    background-color: #4A90E2;
+    font-weight: 700;
+}
+
+/* ------------------ MAIN ------------------ */
+main {
+    margin-left: 220px;
+    padding: 20px;
+    min-height: calc(100vh - 80px - 40px); /* header + footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------ LOGIN ------------------ */
+.login-container {
+    background-color: white;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #1C3F6B;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-container input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #4A90E2;
+}
+
+.login-container button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #357ABD;
+}
+
+/* ------------------ FOOTER ------------------ */
+footer {
+    background-color: #1C3F6B;
+    color: #E1ECF4;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+    nav, .sidebar {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        top: 0;
+        height: auto;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 10px;
+        min-height: auto;
+    }
+
+    .login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .fecha {
+        position: relative;
+        right: 0;
+        top: 0;
+        transform: none;
+        text-align: right;
+        margin-top: 5px;
+    }
+
+    footer {
+        position: relative;
+    }
+}

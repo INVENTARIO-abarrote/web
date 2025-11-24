@@ -1,0 +1,253 @@
+/* ------------------ CONFIGURACIÓN GENERAL ------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F5F8FA;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ------------------ HEADER ------------------ */
+header {
+    background-color: #1C3F6B;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.fecha {
+    font-size: 0.9rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ------------------ SIDEBAR ------------------ */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #1C3F6B;
+    width: 200px;
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 80px;
+    left: 0;
+}
+
+.sidebar a {
+    color: #E1ECF4;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    transition: background 0.3s;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    background-color: #376BA0;
+}
+
+.sidebar a.active {
+    background-color: #4A90E2;
+    font-weight: 700;
+}
+
+/* ------------------ MAIN ------------------ */
+main {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+/* ------------------ TITULOS ------------------ */
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-left: 6px solid #4A90E2;
+    padding-left: 10px;
+}
+
+/* ------------------ BOTONES ------------------ */
+button, .btn {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin-right: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover, .btn:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+}
+
+/* ------------------ TABLAS ------------------ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #E1ECF4;
+}
+
+th {
+    background-color: #AEE0F2;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:hover {
+    background-color: #f0f8ff;
+}
+
+.actions {
+    margin-bottom: 20px;
+}
+
+/* ------------------ MODAL ------------------ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+}
+
+.close {
+    color: #888;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal h3 {
+    margin-bottom: 15px;
+    color: #1C3F6B;
+}
+
+.modal form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.modal form input[type="text"],
+.modal form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal form textarea {
+    min-height: 60px;
+}
+
+.modal form div {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.modal form button {
+    padding: 8px 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btnCancelarCategoria {
+    background-color: #ccc;
+    color: #333;
+    margin-right: 10px;
+}
+
+#btnCancelarCategoria:hover {
+    background-color: #aaa;
+}
+
+#btnGuardarCategoria {
+    background-color: #4A90E2;
+    color: white;
+}
+
+#btnGuardarCategoria:hover {
+    background-color: #357ABD;
+}
+
+/* ------------------ FOOTER ------------------ */
+footer {
+    background-color: #1C3F6B;
+    color: #E1ECF4;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        height: auto;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+}
